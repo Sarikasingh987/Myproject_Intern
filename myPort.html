@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarika's developer Portfolio</title>
+    <link rel="stylesheet" href="myPort.css">
+    <script src="https://kit.fontawesome.com/4299745c3b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   <div id="header">
+    <div class="container">
+        <nav>
+                <img src="image\sarika singh.png" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+        </nav>
+        <div class="header-text">
+            <p> Web-Developer</p>
+            <h1>Hi, I'm <span>Sarika Singh</span> <br>from India.</h1>
+        </div>
+    </div>
+   </div> 
+   <!-- -----about----- -->
+   <div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="ab-col1">
+                <img src="image\sa5.jpg.jpg"  >
+            </div>
+            <div class="ab-col2">
+                <h1 class="sub-title">About Me</h1>
+                <p>My name is Sarika Singh, and I am a front-end developer. I specialize in designing and developing user-friendly, responsive, and visually appealing websites and applications.
+
+                    I am proficient in HTML, CSS, and JavaScript, and I have experience working with various front-end frameworks like React. 
+                    I am a team player and thrive in collaborative environments. I am always open to learning new things and taking on new challenges. Thank you for considering me for your front-end development needs.
+                </p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick ="opentab('skills')">Skills</p>
+                    <p class="tab-links " onclick ="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick ="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Web-Development </span></li>
+                        <li><span> C/C++</span></li>
+                        <li><span> JavaScript</span></li>
+                        <li><span> ReactJs</span></li>
+                        <li><span> Style Sheets</span></li>
+                        <li><span> Git/Github</span></li>
+                        <li><span> Python</span></li>
+                    </ul>
+                </div>
+                <div class="tab-contents " id="experience">
+                    <ul>
+                        <li><span>Web Development Training </span><br>Bharat Intern<br>•Developed a fully functional regular,responsive e-commerce website. <br>
+                            • Technology used for
+                            frontend:HTML,CSS,,,Javascript.</li>
+                        <li><span> Java Development Intern</span><br> Codesoft <br>• Worked as a java developer intern <br>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>B.Tech in Computer Science
+                            Information Technology </span><br>KIET GROUP OF INSTITUTIONS,GHAZIABAD
+                             December 2021- Present; CGPA:7</li>
+                             <li><span> Diploma</span><br>kmggp badalpur gautam buddha nagar,Ghaziabad
+                                Percentage:-  80.89%</li>
+                        <li><span> Class XII</span><br> FNC Dhamapur, ballia
+                              Percentage:-  74.2%</li>
+                        <li><span> Class X</span><br>KDBIC ,Ballia
+                            Percentage:-  78.5%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+   </div>
+   <!-- ---Contact--- -->
+   <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i><span>Email:-</span>absarika987@gmail.com</p>
+                <p><i class="fa-solid fa-phone-volume"></i>8726633621</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter-square"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="image\sa2.jpg.jpg"download class="btn">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text"name="Name" placeholder="Your Name" required />
+                    <input type="email"name="Email" placeholder="Your Email" required />
+                    <textarea name="Message"placeholder="Your Message" id="" cols="30" rows="10"></textarea>
+                    <button type="submit" class="bnt">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+        <div class="copyright">
+            <p>Copyright © Sarika. Made with Love <i class="fa-regular fa-gem"></i></p>
+        </div>
+   </div>
+   <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        // // tabcontents.addEventListener("click",function(){
+            
+        // // })
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+   </script>
+   <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbytT18z7WNwkYaNMqED5JcJMvBCR8OwKLwNz8uc7aACWl_eZI9Cit6A2lx_btkXuJN99A/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg");
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset();
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
